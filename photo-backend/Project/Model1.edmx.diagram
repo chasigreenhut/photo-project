@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="484f3b8f8428458e83cb2c53eacd9137" Name="Diagram1">
+        <EntityTypeShape EntityType="PhotoDBChasiLeaModel.Orders" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoDBChasiLeaModel.pakages" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoDBChasiLeaModel.Photos" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoDBChasiLeaModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoDBChasiLeaModel.Users" Width="1.5" PointX="0.75" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="PhotoDBChasiLeaModel.FK_Orders_pakages" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoDBChasiLeaModel.FK_Orders_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="PhotoDBChasiLeaModel.FK_Photos_Orders" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
