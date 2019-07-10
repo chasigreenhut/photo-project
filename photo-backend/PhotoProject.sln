@@ -1,14 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "Project\DAL.csproj", "{A5375C04-25A2-455D-8D20-732867078F1B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{FDA91969-238F-4021-8E50-4A8330E230EE}"
-	ProjectSection(ProjectDependencies) = postProject
-		{A5375C04-25A2-455D-8D20-732867078F1B} = {A5375C04-25A2-455D-8D20-732867078F1B}
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{DDE2AEA8-B5CA-480F-954C-BA2727F5502E}"
 EndProject
@@ -42,10 +37,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A5375C04-25A2-455D-8D20-732867078F1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A5375C04-25A2-455D-8D20-732867078F1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A5375C04-25A2-455D-8D20-732867078F1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A5375C04-25A2-455D-8D20-732867078F1B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FDA91969-238F-4021-8E50-4A8330E230EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FDA91969-238F-4021-8E50-4A8330E230EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FDA91969-238F-4021-8E50-4A8330E230EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
