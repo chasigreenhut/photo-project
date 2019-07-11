@@ -19,10 +19,10 @@ export class HomeComponent implements OnInit, OnDestroy {
         private userService: UserService,
         private orderService:OrderService
     ) {
-        this.currentUser = JSON.parse( localStorage.getItem('currentUser'));
-        // this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
-        //     this.currentUser = user;
-        // });
+        
+        this.currentUserSubscription = this.authenticationService.currentUser.subscribe(user => {
+            this.currentUser = user;
+        });
     }
 
     ngOnInit() {
