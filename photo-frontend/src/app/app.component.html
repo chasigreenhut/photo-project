@@ -10,20 +10,23 @@
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ml-auto">
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#services">Services</a>
+                <a class="nav-link js-scroll-trigger" href="/start#services">Services</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#portfolio">Portfolio</a>
+                <a class="nav-link js-scroll-trigger" href="/start#portfolio">Portfolio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#about">About</a>
+                <a class="nav-link js-scroll-trigger" href="/start#about">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#team">Team</a>
+                <a class="nav-link js-scroll-trigger" href="/start#team">Team</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
-              </li>
+                <a class="nav-link js-scroll-trigger" href="/start#contact">Contact</a>
+              </li> 
+              <li class="nav-item" *ngIf="currentUser">
+                  <a class="nav-link js-scroll-trigger" href="/home">My Account</a>
+                </li>
               <li class="nav-item"  *ngIf="currentUser">
                     <a class="nav-link js-scroll-trigger"  (click)="logout()">Logout</a>
                 </li>

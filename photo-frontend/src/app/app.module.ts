@@ -14,6 +14,7 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { RegisterComponent } from './register';
+import { StartComponent } from './start/start.component';
 
 @NgModule({
     imports: [
@@ -26,6 +27,7 @@ import { RegisterComponent } from './register';
         AppComponent,
         AlertComponent,
         HomeComponent,
+        StartComponent,
         LoginComponent,
         RegisterComponent
     ],
