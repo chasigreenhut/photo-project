@@ -1,8 +1,8 @@
 ﻿import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Order } from '../_models/order';
 
-import { User } from '@/_models';
-import { Order } from '@/_models/order';
+
 
 @Injectable({ providedIn: 'root' })
 export class OrderService {
