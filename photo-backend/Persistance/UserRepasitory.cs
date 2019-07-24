@@ -1,9 +1,8 @@
-﻿using Api;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
+
+
 
 namespace Persistance
 {
@@ -12,10 +11,21 @@ namespace Persistance
         
         public void Save(Users user)
         {
+            try
+            {
+              
+                Data.DB.Users.Add(user);
+                Data.DB.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+              
+            }
             
-            Data.DB.Users.Add(user);
-            Data.DB.SaveChanges();
+           
         }
+
 
         public Users GetUser(string email,string password)
         {
