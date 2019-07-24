@@ -1,0 +1,11 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\photo-backend",
+    "\\photo-backend\\Api",
+    "\\photo-backend\\Api\\Controllers",
+    "\\photo-backend\\Persistance"
+  ],
+  "SelectedNode": "\\photo-backend\\Api\\Controllers\\AccountController.cs",
+  "PreviewInSolutionExplorer": false
+}
