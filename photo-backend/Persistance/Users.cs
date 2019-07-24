@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Api
+namespace Persistance
 {
     using System;
     using System.Collections.Generic;
