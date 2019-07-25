@@ -43,6 +43,7 @@ warning 6002: The table/view 'PhotoEndProject.dbo.Photos' does not have a primar
           <Property Name="emailAddress" Type="varchar" MaxLength="20" Nullable="false" />
           <Property Name="cellPhoneNumber" Type="varchar" MaxLength="10" />
           <Property Name="userType" Type="bit" />
+          <Property Name="isAdmin" Type="bit" />
         </EntityType>
         <EntityContainer Name="PhotoEndProjectModelStoreContainer">
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />

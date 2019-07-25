@@ -29,8 +29,18 @@ namespace Persistance
 
         public Users GetUser(string email,string password)
         {
-            return Data.DB.Users.FirstOrDefault(u => u.emailAddress == email && u.userPassword == password);
-        }
+            try
+            {
+                return Data.DB.Users.FirstOrDefault(u => u.emailAddress == email && u.userPassword == password);
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+
+         }
 
     }
 }

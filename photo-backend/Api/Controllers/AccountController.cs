@@ -81,13 +81,7 @@ namespace Api.Controllers
             };
         }
 
-        // POST api/Account/Logout
-        [Route("Logout")]
-        public IHttpActionResult Logout()
-        {
-            Authentication.SignOut(CookieAuthenticationDefaults.AuthenticationType);
-            return Ok();
-        }
+       
 
         // GET api/Account/ManageInfo?returnUrl=%2F&generateState=true
         [HttpGet]
@@ -339,7 +333,7 @@ namespace Api.Controllers
         [Route("Register")]
         public async Task<IHttpActionResult> Register(Model.User model)
         {
-            UserRepo.Save(new Users { emailAddress = model.Email, userName = model.FirstName });
+            UserRepo.Save(new Users { emailAddress = model.Email, userName = model.FirstName , userPassword =model.Password});
             
 
             return Ok();
@@ -349,7 +343,16 @@ namespace Api.Controllers
         [Route("Login")]
         public Users Login(string username,string password)
         {
-            return UserRepo.GetUser(username,password);
+            try
+            {
+                return UserRepo.GetUser(username, password);
+            }
+            catch (Exception)
+            {
+
+                return null;
+            }
+            
         }
 
         // POST api/Account/RegisterExternal

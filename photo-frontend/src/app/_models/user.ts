@@ -6,5 +6,5 @@
     password: string;
     email: string;
     cell: string;
-    userType:boolean;
+    userType:string;
 }

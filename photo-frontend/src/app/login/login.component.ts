@@ -20,9 +20,7 @@ export class LoginComponent implements OnInit {
         private alertService: AlertService
     ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
-            this.router.navigate(['/home']);
-        }
+        this.reroutUser();
     }
 
     ngOnInit() {
@@ -30,11 +28,22 @@ export class LoginComponent implements OnInit {
             username: ['', Validators.required],
             password: ['', Validators.required]
         });
-
-        // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/home';
+        this.returnUrl='/';
+        if (this.authenticationService.currentUserValue) { 
+            if(this.authenticationService.currentUserValue.userType)
+                this.returnUrl ='/admin-home';
+            this.returnUrl='/home';
+        }
+     }
+    reroutUser()
+    {
+        if (this.authenticationService.currentUserValue) { 
+            if(this.authenticationService.currentUserValue.userType)
+                this.router.navigate(['/admin-home']);
+            else
+                this.router.navigate(['/home']);
+        }
     }
-
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
 
@@ -51,7 +60,7 @@ export class LoginComponent implements OnInit {
             .pipe(first())
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    this.reroutUser();
                 },
                 error => {
                     this.alertService.error(error);
