@@ -15,6 +15,7 @@ namespace Api
         {
             var cors = new EnableCorsAttribute("*", "*", "*");
             config.EnableCors(cors);
+
             // Web API configuration and services
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
@@ -30,6 +31,12 @@ namespace Api
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+           // config.Routes.MapHttpRoute(
+           //    name: "DefaultApi",
+           //    routeTemplate: "api/{controller}",
+           //    defaults: new { id = RouteParameter.Optional }
+           //);
         }
     }
 }
