@@ -20,5 +20,8 @@ namespace Persistance
         public int numberOfOurs { get; set; }
         public Nullable<bool> Publishable { get; set; }
         public int userId { get; set; }
+    
+        public virtual Users Users { get; set; }
+        public virtual Photos Photos { get; set; }
     }
 }

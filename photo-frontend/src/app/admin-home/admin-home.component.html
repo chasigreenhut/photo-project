@@ -1,4 +1,4 @@
-﻿<form>
+﻿
 <header class="masthead">
     <div class="container">
       <div class="intro-text">
@@ -15,10 +15,30 @@
             <h2 class="section-heading text-uppercase">Users</h2>
             <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
        <ul>
-      <li *ngFor="let user of users">
-          {{user.username}} ({{user.firstName}} {{user.lastName}})
+         <table>
+          <thead>
+              <tr>
+                  <th>firstName </th>
+                  <th>lastName</th>
+                  <th>emailAddress</th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th> </th>
+              </tr>
+          </thead>
+      <tr *ngFor="let user of users">
+         <td>
+            <td>({{user.firstName}}</td>
+            <td></td>{{user.lastName}}</td>
+            <td>{{user.emailAddress}}</td>
+                <td>{{user.userPassword}}</td>
+                    <td>{{user.cellPhoneNumber}}</td>
+                        <td> {{user.userType}})</td>KD
+
           - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-      </li>
+      </tr>
+    </table>
   </ul>
   
   <ul>

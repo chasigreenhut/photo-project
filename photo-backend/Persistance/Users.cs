@@ -14,11 +14,20 @@ namespace Persistance
     
     public partial class Users
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Users()
+        {
+            this.Orders = new HashSet<Orders>();
+        }
+    
         public int userId { get; set; }
         public string userName { get; set; }
         public string userPassword { get; set; }
         public string emailAddress { get; set; }
         public string cellPhoneNumber { get; set; }
         public Nullable<bool> userType { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="MangerRepasitory.cs" />
     <Compile Include="Orders.cs">
       <DependentUpon>Photo.tt</DependentUpon>
     </Compile>

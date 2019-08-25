@@ -26,6 +26,7 @@ export class AdminHomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+
         this.loadAllUsers();
         this.loadAllOrders();
     }
@@ -44,6 +45,9 @@ export class AdminHomeComponent implements OnInit, OnDestroy {
     private loadAllUsers() {
         this.userService.getAll().pipe(first()).subscribe(users => {
             this.users = users;
+        },
+        error =>{
+            console.log("error")
         });
     }
 

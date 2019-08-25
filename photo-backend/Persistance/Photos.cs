@@ -17,5 +17,7 @@ namespace Persistance
         public int orderId { get; set; }
         public string photoUrl { get; set; }
         public Nullable<bool> selected { get; set; }
+    
+        public virtual Orders Orders { get; set; }
     }
 }

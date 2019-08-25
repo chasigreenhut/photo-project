@@ -45,6 +45,30 @@ warning 6002: The table/view 'PhotoEndProject.dbo.Photos' does not have a primar
           <Property Name="userType" Type="bit" />
           <Property Name="isAdmin" Type="bit" />
         </EntityType>
+        <Association Name="FK__Orders__userId__47DBAE45">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Photos__orderId__48CFD27E">
+          <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
+          <End Role="Photos" Type="Self.Photos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="orderId" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="PhotoEndProjectModelStoreContainer">
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="pakages" EntityType="Self.pakages" Schema="dbo" store:Type="Tables" />
@@ -56,6 +80,14 @@ warning 6002: The table/view 'PhotoEndProject.dbo.Photos' does not have a primar
     [Photos].[selected] AS [selected]
     FROM [dbo].[Photos] AS [Photos]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK__Orders__userId__47DBAE45" Association="Self.FK__Orders__userId__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Photos__orderId__48CFD27E" Association="Self.FK__Photos__orderId__48CFD27E">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Photos" EntitySet="Photos" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -71,6 +103,8 @@ warning 6002: The table/view 'PhotoEndProject.dbo.Photos' does not have a primar
           <Property Name="numberOfOurs" Type="Int32" Nullable="false" />
           <Property Name="Publishable" Type="Boolean" />
           <Property Name="userId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="PhotoEndProjectModel.FK__Orders__userId__47DBAE45" FromRole="Orders" ToRole="Users" />
+          <NavigationProperty Name="Photos" Relationship="PhotoEndProjectModel.FK__Photos__orderId__48CFD27E" FromRole="Orders" ToRole="Photos" />
         </EntityType>
         <EntityType Name="pakages">
           <Key>
@@ -89,6 +123,7 @@ warning 6002: The table/view 'PhotoEndProject.dbo.Photos' does not have a primar
           <Property Name="emailAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="cellPhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="userType" Type="Boolean" />
+          <NavigationProperty Name="Orders" Relationship="PhotoEndProjectModel.FK__Orders__userId__47DBAE45" FromRole="Users" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Photos">
           <Key>
@@ -97,13 +132,46 @@ warning 6002: The table/view 'PhotoEndProject.dbo.Photos' does not have a primar
           <Property Name="orderId" Type="Int32" Nullable="false" />
           <Property Name="photoUrl" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="selected" Type="Boolean" />
+          <NavigationProperty Name="Orders" Relationship="PhotoEndProjectModel.FK__Photos__orderId__48CFD27E" FromRole="Photos" ToRole="Orders" />
         </EntityType>
         <EntityContainer Name="PhotoEndProjectEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Orders" EntityType="Self.Orders" />
           <EntitySet Name="pakages" EntityType="Self.pakages" />
           <EntitySet Name="Users" EntityType="Self.Users" />
           <EntitySet Name="Photos" EntityType="Self.Photos" />
+          <AssociationSet Name="FK__Orders__userId__47DBAE45" Association="PhotoEndProjectModel.FK__Orders__userId__47DBAE45">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Photos__orderId__48CFD27E" Association="PhotoEndProjectModel.FK__Photos__orderId__48CFD27E">
+            <End Role="Orders" EntitySet="Orders" />
+            <End Role="Photos" EntitySet="Photos" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK__Orders__userId__47DBAE45">
+          <End Type="PhotoEndProjectModel.Users" Role="Users" Multiplicity="1" />
+          <End Type="PhotoEndProjectModel.Orders" Role="Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="userId" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Photos__orderId__48CFD27E">
+          <End Type="PhotoEndProjectModel.Orders" Role="Orders" Multiplicity="1" />
+          <End Type="PhotoEndProjectModel.Photos" Role="Photos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Orders">
+              <PropertyRef Name="orderId" />
+            </Principal>
+            <Dependent Role="Photos">
+              <PropertyRef Name="orderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->

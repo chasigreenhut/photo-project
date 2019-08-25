@@ -18,6 +18,8 @@ using Api.Providers;
 using Api.Results;
 using Api;
 using Persistance;
+using System.Net;
+
 
 namespace Api.Controllers
 {
@@ -28,7 +30,14 @@ namespace Api.Controllers
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
         private UserRepasitory _userRepo;
+        //private MangerRepasitory ;
 
+        //Get/api/Account/Manger
+        [Route("Users"), HttpGet]
+        public HttpResponseMessage getAll()
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, MangerRepasitory.getAll);
+        }
         public AccountController()
         {
         }
@@ -509,4 +518,5 @@ namespace Api.Controllers
 
         #endregion
     }
+ 
 }

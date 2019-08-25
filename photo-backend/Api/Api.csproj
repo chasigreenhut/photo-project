@@ -250,6 +250,7 @@
     <Compile Include="Controllers\OrdersController.cs" />
     <Compile Include="Controllers\PakegeController.cs" />
     <Compile Include="Controllers\PhotosController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Dto\UserDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

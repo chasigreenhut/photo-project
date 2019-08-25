@@ -1,10 +1,9 @@
 ﻿export class User {
-    id: number;
+   userId: number;
     token:string;
     userName: string;
-    fullName: string;
-    password: string;
-    email: string;
-    cell: string;
+    userPassword: string;
+    emailAddress: string;
+    cellPhoneNumber: string;
     userType:string;
 }
