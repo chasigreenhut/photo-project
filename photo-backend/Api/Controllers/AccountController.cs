@@ -21,9 +21,10 @@ using Persistance;
 using System.Net;
 
 
+
 namespace Api.Controllers
 {
-    [Authorize]
+   // [Authorize]
     [RoutePrefix("api/Account")]
     public class AccountController : ApiController
     {
@@ -36,7 +37,13 @@ namespace Api.Controllers
         [Route("Users"), HttpGet]
         public HttpResponseMessage getAll()
         {
-            return Request.CreateResponse(HttpStatusCode.OK, MangerRepasitory.getAll);
+            return  Request.CreateResponse(HttpStatusCode.OK, MangerRepasitory.getAll());
+        }
+        //Get/api/Account/getOrderByUser
+        [Route("getOrderByUser"), HttpGet]
+        public HttpResponseMessage getOrderByUser(int idUser)
+        {
+            return Request.CreateResponse(HttpStatusCode.OK, MangerRepasitory.getOrderByUser(idUser));
         }
         public AccountController()
         {
@@ -342,7 +349,7 @@ namespace Api.Controllers
         [Route("Register")]
         public async Task<IHttpActionResult> Register(Model.User model)
         {
-            UserRepo.Save(new Users { emailAddress = model.Email, userName = model.FirstName , userPassword =model.Password});
+            UserRepo.Save(new Users { emailAddress = model.Email, userName = model.FirstName+" "+model.LastName , userPassword =model.Password});
             
 
             return Ok();

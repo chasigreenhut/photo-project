@@ -1,0 +1,21 @@
+<div *ngIf="userOrders.orders">
+    <ul *ngFor="let order of userOrders.orders">
+      <li>
+        {{order.orderId}}
+        {{order.packgeId}}
+        {{order.dateOrder}}
+        {{order.numberOfOurs}}
+        {{order.Publishable}}
+        {{order.numberOfOurs}}
+        {{order.userId}}
+
+      </li>
+     <!-- display images already uploaded--> 
+      <div class="file-upload upload-button">
+      <div *ngFor="let image of images[order.orderId]">
+        <img [src]="image" height="200"> <br/>
+      </div>
+        <input id="custom-input"  (change)="handleFiles($event,order.orderId)" type="file" multiple>
+      </div>
+    </ul>
+  </div>

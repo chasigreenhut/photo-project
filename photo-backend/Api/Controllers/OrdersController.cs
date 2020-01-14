@@ -15,7 +15,7 @@ namespace PhotoApi.Controllers
         //[Route("GetOrders")]
         public List<Order> GetOrders()
         {
-            var user = new User("Elisheva", "Epstein", "eli7green@gmail.com");
+           var user = new User("Elisheva", "Epstein", "eli7green@gmail.com");
             var order = new Order(DateTime.Now,user);
             var lst= new List<Order> { order } ;
             return lst;

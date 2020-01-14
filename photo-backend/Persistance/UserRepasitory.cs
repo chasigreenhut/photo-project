@@ -26,7 +26,7 @@ namespace Persistance
            
         }
 
-
+        //דוגמא לשליפה של משתמש
         public Users GetUser(string email,string password)
         {
             try

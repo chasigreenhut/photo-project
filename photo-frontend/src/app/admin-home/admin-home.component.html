@@ -1,50 +1,84 @@
-﻿
-<header class="masthead">
-    <div class="container">
-      <div class="intro-text">
-        <div class="intro-lead-in">Admin Home Page</div>
-        <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
-        <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
-      </div>
-    </div>
-  </header>
-  <section class="page-section" id="Users">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Users</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-       <ul>
-         <table>
-          <thead>
-              <tr>
-                  <th>firstName </th>
-                  <th>lastName</th>
-                  <th>emailAddress</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                  <th> </th>
-              </tr>
-          </thead>
-      <tr *ngFor="let user of users">
-         <td>
-            <td>({{user.firstName}}</td>
-            <td></td>{{user.lastName}}</td>
-            <td>{{user.emailAddress}}</td>
-                <td>{{user.userPassword}}</td>
-                    <td>{{user.cellPhoneNumber}}</td>
-                        <td> {{user.userType}})</td>
+﻿<header class="masthead">
 
-          - <a (click)="deleteUser(user.id)" class="text-danger">Delete</a>
-      </tr>
-    </table>
-  </ul>
-  
-  <ul>
-      <li *ngFor="let order of orders">
-          {{order.$id}} ({{order.OrderDate}} {{order.User}})
-            </li>
-  </ul>
-  
-  
+
+
+  <div class="container">
+    <div class="intro-text">
+      <div class="intro-lead-in">Admin Home Page</div>
+      <div class="intro-heading text-uppercase">It's Nice To Meet You</div>
+      <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="#services">Tell Me More</a>
+    </div>
+  </div>
+</header>
+<section class="page-section" id="Users">
+  <img *ngIf="loading" class="pl-3"
+    src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Users</h2>
+        <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        <ul>
+          <table>
+            <thead>
+              <tr>
+                <th>userName </th>
+                <th>emailAddress</th>
+                <th>userPassword</th>
+                <th></th>
+                <th></th>
+                <th> </th>
+              </tr>
+            </thead>
+            <tr *ngFor="let user of users">
+
+              <td>({{user.userName}}</td>
+              <td>{{user.emailAddress}}</td>
+              <td>{{user.userPassword}}</td>
+              <td>{{user.cellPhoneNumber}}</td>
+              <td> {{user.userType}})</td>
+
+              <button (click)="getOrderByUser(user.userId)" class="text-danger">orders</button>
+
+            </tr>
+          </table>
+        </ul>
+        <!-- <table *ngIf="orders">
+          <thead>
+            <tr>
+              <th>orderId </th>
+              <th>packgeId</th>
+              <th>dateOrder</th>
+              <th>numberOfOurs</th>
+              <th>Publishable</th>
+              <th>numberOfOurs </th>
+              <th>userId</th>
+            </tr>
+          </thead>
+          <tr *ngFor="let order of orders">
+            <td>order.orderId </td>
+            <td>order.packgeId</td>
+            <td>order.dateOrder</td>
+            <td>order.numberOfOurs</td>
+            <td>order.Publishable</td>
+            <td>order.numberOfOurs</td>
+            <td>order.userId</td>
+          </tr>
+        </table> -->
+<!-- *ngIf="orders"> -->
+<!-- <div *ngIf="userOrders.orders">
+        <ul *ngFor="let order of userOrders.orders">
+          <li *ngIf="userOrders.orders">
+            {{order.orderId}}
+            {{order.packgeId}}
+            {{order.dateOrder}}
+            {{order.numberOfOurs}}
+            {{order.Publishable}}
+            {{order.numberOfOurs}}
+            {{order.userId}}
+      
+          </li>
+          
+        </ul>
+      </div> -->
+

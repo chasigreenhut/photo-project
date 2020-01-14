@@ -4,4 +4,5 @@ import { first } from 'rxjs/operators';
 
 
 @Component({ templateUrl: 'start.component.html' })
-export class StartComponent {}
+export class StartComponent {
+}

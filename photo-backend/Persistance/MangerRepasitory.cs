@@ -17,5 +17,11 @@ namespace Persistance
             List<Users> ListUsers = db.Users.ToList();
             return ListUsers;
         }
+
+        public static List<Orders> getOrderByUser(int id)
+        {
+            List<Orders> ListOrders = db.Orders.Where(o => o.userId == id).ToList();
+            return ListOrders;
+        }
     }
 }
