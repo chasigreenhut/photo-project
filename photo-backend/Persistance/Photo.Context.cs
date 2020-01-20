@@ -25,9 +25,9 @@ namespace Persistance
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Orders> Orders { get; set; }
         public virtual DbSet<pakages> pakages { get; set; }
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Photos> Photos { get; set; }
+        public virtual DbSet<Orders> Orders { get; set; }
     }
 }

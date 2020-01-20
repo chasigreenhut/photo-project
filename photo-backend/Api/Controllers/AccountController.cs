@@ -19,8 +19,7 @@ using Api.Results;
 using Api;
 using Persistance;
 using System.Net;
-
-
+using Api.Managers;
 
 namespace Api.Controllers
 {
@@ -31,6 +30,7 @@ namespace Api.Controllers
         private const string LocalLoginProvider = "Local";
         private ApplicationUserManager _userManager;
         private UserRepasitory _userRepo;
+        private ApiManager apiManager = new ApiManager();
         //private MangerRepasitory ;
 
         //Get/api/Account/Manger
@@ -43,7 +43,7 @@ namespace Api.Controllers
         [Route("getOrderByUser"), HttpGet]
         public HttpResponseMessage getOrderByUser(int idUser)
         {
-            return Request.CreateResponse(HttpStatusCode.OK, MangerRepasitory.getOrderByUser(idUser));
+            return Request.CreateResponse(HttpStatusCode.OK, apiManager.getOrderByUser(idUser));
         }
         public AccountController()
         {

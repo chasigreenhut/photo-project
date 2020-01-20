@@ -11,11 +11,21 @@
 
       </li>
      <!-- display images already uploaded--> 
-      <div class="file-upload upload-button">
-      <div *ngFor="let image of images[order.orderId]">
-        <img [src]="image" height="200"> <br/>
+      <!-- <div class="file-upload upload-button">-->
+     <div *ngFor="let image of images[order.orderId]; let i = index">
+
+          <img width="200px" src="https://photoprj1.s3.amazonaws.com/{{ 
+            images[order.orderId][i]}}" 
+     />
+        <i class="fas fa-trash-alt" (click)="removePhotoFromOrder(order.orderId,i)"></i>
+        
+         <br/>
       </div>
-        <input id="custom-input"  (change)="handleFiles($event,order.orderId)" type="file" multiple>
-      </div>
+        <!-- <input id="custom-input"  (change)="handleFiles($event,order.orderId)" type="file" multiple> -->
+      <!-- </div> -->
+
+      <input (change)="onImagePicked($event,order.orderId)" placeholder="Upload Image" 
+   type="file" multiple/>
+   <button (click)="saveImagesForOrder(order.orderId)">Upload Images To Order</button>
     </ul>
   </div>

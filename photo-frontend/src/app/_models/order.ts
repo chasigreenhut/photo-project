@@ -12,3 +12,8 @@ export class Order {
 export class UserOrders {
     orders: Array<Order>= new Array<Order>();
 }
+
+export class OrderPhotos {
+    orderId: number;
+    photos: Array<string>= new Array<string>();
+}

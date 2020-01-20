@@ -5,13 +5,13 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9a7202fdeedd4b28bd0360b9c6f4ab14" Name="Diagram1" ZoomLevel="86">
-        <EntityTypeShape EntityType="PhotoEndProjectModel.Orders" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="PhotoEndProjectModel.pakages" Width="1.5" PointX="1" PointY="4" IsExpanded="true" />
         <EntityTypeShape EntityType="PhotoEndProjectModel.Users" Width="1.5" PointX="3.25" PointY="0.625" IsExpanded="true" />
         <EntityTypeShape EntityType="PhotoEndProjectModel.Photos" Width="1.5" PointX="3.375" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PhotoEndProjectModel.Orders" Width="1.5" PointX="5.5" PointY="6.125" />
         <AssociationConnector Association="PhotoEndProjectModel.FK__Orders__userId__47DBAE45" />
         <AssociationConnector Association="PhotoEndProjectModel.FK__Photos__orderId__48CFD27E" />
-      </Diagram>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

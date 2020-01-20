@@ -23,5 +23,12 @@ namespace Persistance
             List<Orders> ListOrders = db.Orders.Where(o => o.userId == id).ToList();
             return ListOrders;
         }
+
+        public static int UploadPhotosToOrder(List<Photos> photos)
+        {
+            photos.ForEach(photo => db.Photos.Add(photo));
+            var result = db.SaveChanges();
+            return result;
+        }
     }
 }
